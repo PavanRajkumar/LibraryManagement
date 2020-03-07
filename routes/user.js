@@ -210,21 +210,24 @@ router.post("/publisher/scan",(req,res)=>{
                 conn.query(qr,[req.body.bookID,req.body.rackID,req.body.bookID],(error, results, rows, fields)=>{
                     if(error) throw error;
                     req.flash('success_msg','   Book Successfully scanned  !!!');
-                    res.redirect("/user/publisher/scan");
+                    res.status(204).end();
+                    //res.redirect("/user/publisher/scan");
                 });
             }else{
                 req.flash('error_msg','   Book with BookID '+result[0].Access_No+' already available on rack no '+result[0].Rack_No+' !!!');
                 res.redirect("/user/publisher/scan");
+                //res.status(204).end();
             }
         }else if(!err && (typeof result[0]=='undefined')){
             req.flash('error_msg','   Book with ID '+req.body.bookID+' is not included in database please add before scanning  !!!');
             res.redirect("/user/publisher/scan");
+            //res.status(204).end();
         }else{
             req.flash('error_msg','   Something went wrong  !!!');
             res.redirect("/user/publisher/scan");
+            //res.status(204).end();
         }
     });
-    //res.status(204).send();
 })
 //end of publisher..........
 
