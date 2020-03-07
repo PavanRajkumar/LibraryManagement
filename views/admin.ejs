@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>Library Admin</title>
+        <!-- add icon link -->
+        <link rel = "icon" href="/images/CMRIT.png" type = "image/x-icon"> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/stylesAdmin.css">
+        <script type="text/javascript" src="/js/admin.js"></script>
+    </head>
+	<header>
+            <img class ="logo" src="http://www.successvenue.co.in/images/colleges/c8ccf-252_logo.png" alt="logo" height='100' width='200'>
+            <nav>
+                <ul class="nav_links">
+                    <li><a href="/user/admin/addbook">Add new Books</a></li>
+                    <li><a href="/faculty/hod/leaveDetails" aria-disabled="true">STATUS <span style="color: red;">0</span></a></li>
+                    <li><a href="/user/admin/reset"aria-disabled="false">Reset Database</a></li>
+                    <li><a href="/user/admin/libDetail">Library REPORT</a></li>
+                </ul>
+                <a class="cta" href="/user/logout"><button>Log Out</button></a>
+                <a class="cta" href="/user/admin/registration"><button>Add new Librarian</button></a>
+                <a class="cta" href="#" onmouseover="mouseOverDelete()"><button>Remove Librarian</button></a>
+                <div class="arrow-up" id="arrow-up"></div>
+                <div class="delete-form" id="delete-form" onmouseover="mouseOverDeleteDiv()" onmouseout="mouseOutDeleteDiv()">
+                    <form action="/user/admin/delete" method="post" class="form-inline">
+                        <div  class="form-group">
+                            <input type="text" name="userID" class="form-control" placeholder="userID" autocomplete="off" required/>
+                        </div>					
+                        <button type="submit" class="btn btn-danger" name="submit" value="delete">Delete</button>
+                    </form>
+                </div>
+            </nav>
+        </header>
+    <body>
+        
+       <div class="container">
+        <%- include("message") -%>
+		 <div class="jumbotron">
+  		<h1 class="display-4">Hello, world!</h1>
+  		<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  		<hr class="my-4">
+  		<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  		<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+		</div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
+</html>

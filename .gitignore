@@ -1,0 +1,4 @@
+node_modules
+.vscode
+model/sqlcon.js
+public/images
